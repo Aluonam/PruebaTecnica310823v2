@@ -13,13 +13,25 @@ const UserList = () => {
     const llamadaAPI = () => {
         const url = `https://jsonplaceholder.typicode.com/users`;
         axios.get(url)
-        .then((response)=>console.log(response.data))
+        .then((response)=>setDatosAPI(response.data))
         .catch(error => console.log('Error al obtener los datos:', error));
     }
+
+    const listaUsuarios = datosAPI.map((valorActual)=>{
+        return(
+            <ul key={valorActual.id}>
+                <li>{valorActual.name}</li>
+            </ul>
+        )
+    })
     
 
   return (
+    <>
     <div>UserList</div>
+    {listaUsuarios}
+    </>
+    
   )
 }
 
