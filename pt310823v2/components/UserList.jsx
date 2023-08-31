@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import UserItem from './UserItem';
+import Clock from './Clock';
 
 const UserList = () => {
 
@@ -25,6 +26,7 @@ const UserList = () => {
     <>
     <div>UserList</div>
     <UserItem  datosAPI={datosAPI}></UserItem>
+    <Clock></Clock>
     </>
     
   )
