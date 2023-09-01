@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Tarea 1: Configuración Inicial**
 
-## Getting Started
+Crea un nuevo proyecto React utilizando la herramienta de línea de comandos de React.
+Instala el paquete axios para manejar las solicitudes HTTP.
 
-First, run the development server:
+**Tarea 2: Llamada API y Mostrar Datos**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Crea un componente funcional llamado UserList.
+Agrega un estado utilizando useState para almacenar la lista de usuarios.
+Utiliza el efecto useEffect para realizar una solicitud GET a la URL https://jsonplaceholder.typicode.com/users al montar el componente.
+Almacena los datos de usuarios en el estado.
+Renderiza la lista de usuarios en una lista utilizando elementos <ul> y <li>.
+Cada usuario debe ser representado como un componente llamado UserItem.
+
+```javascript
+const UserItem = ({datosAPI}) => {
+
+    const listaUsuarios = datosAPI.map((valorActual)=>{
+        return(
+            <ul key={valorActual.id}>
+                <li>{valorActual.name}</li>
+            </ul>
+        )
+    })
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Tarea 3: Mostrar Hora Actual en Tiempo Real**
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Crea un componente funcional llamado Clock.
+Utiliza el estado y el efecto useEffect para almacenar y actualizar la hora actual.
+Utiliza la función setInterval para actualizar la hora cada segundo.
+Renderiza la hora actual en un formato legible, como "HH:MM:SS", en el componente Clock.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+**Tarea 4: Uso de Modal**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Instala el paquete react-modal.
+Crea un componente funcional llamado UserModal.
+Dentro de UserModal, utiliza useState para manejar el estado de si el modal está abierto o cerrado.
+Crea un botón "Detalles" junto a cada usuario en la lista.
+Al hacer clic en el botón "Detalles", abre el modal y muestra más información sobre el usuario, como nombre, correo electrónico, teléfono, etc.
+Agrega un botón "Cerrar" dentro del modal para cerrarlo.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Tarea 5 (Bono): Estilos con CSS**
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Agrega estilos para mejorar la apariencia de la lista de usuarios y el modal.
+Estiliza los elementos de la lista (<li>) para que tengan un fondo claro y un borde.
+Estiliza el modal para que tenga un fondo blanco y aparezca centrado en la pantalla.
