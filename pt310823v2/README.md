@@ -30,6 +30,35 @@ Crea un componente funcional llamado Clock.
 Utiliza el estado y el efecto useEffect para almacenar y actualizar la hora actual.
 Utiliza la función setInterval para actualizar la hora cada segundo.
 Renderiza la hora actual en un formato legible, como "HH:MM:SS", en el componente Clock.
+```javascript
+import React, {useState, useEffect} from 'react'
+
+const Clock = () => {
+
+    const [hora, setHora] = useState("HH:MM:SS")
+
+    useEffect(() => {
+        const intervalId = setInterval(()=>{
+        const hora1 = new Date();
+        setHora(hora1.toLocaleString().split(",")[1]) 
+        },1000)
+
+        return () => clearInterval(intervalId);
+       
+      }, [])
+
+      
+
+  return (
+    <>
+    <div>Clock</div>
+    {hora}
+    </>
+  )
+}
+
+export default Clock
+```
 
 **Tarea 4: Uso de Modal**
 
