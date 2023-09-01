@@ -5,10 +5,16 @@ const Clock = () => {
     const [hora, setHora] = useState("HH:MM:SS")
 
     useEffect(() => {
+        const intervalId = setInterval(()=>{
         const hora1 = new Date();
-        // setHora()
-        console.log(hora1)
-      }, [1000])
+        setHora(hora1.toLocaleString().split(",")[1]) 
+        },1000)
+
+        return () => clearInterval(intervalId);
+       
+      }, [])
+
+      
 
   return (
     <>
