@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-export default function UserModal() {
+export default function UserModal({datosUsuario}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,10 +31,12 @@ export default function UserModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Detalles
+            {datosUsuario.name}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+           {datosUsuario.email}
+           <br></br>
+           {datosUsuario.phone}
           </Typography>
           {/* creo botón para cerrar que reutiliza la función que ya había creada (línea 22) */}
           <button onClick={handleClose}>Cerrar</button>
