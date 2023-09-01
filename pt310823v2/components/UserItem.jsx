@@ -1,11 +1,12 @@
 import React from 'react'
+import UserModal from './UserModal'
 
 const UserItem = ({datosAPI}) => {
 
     const listaUsuarios = datosAPI.map((valorActual)=>{
         return(
             <ul key={valorActual.id}>
-                <li>{valorActual.name}</li>
+                <li>{valorActual.name} <UserModal datosUsuario={valorActual}></UserModal></li>
             </ul>
         )
     })
