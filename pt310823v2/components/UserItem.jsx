@@ -6,7 +6,8 @@ const UserItem = ({datosAPI}) => {
     const listaUsuarios = datosAPI.map((valorActual)=>{
         return(
             <ul key={valorActual.id}>
-                <li>{valorActual.name} <UserModal datosUsuario={valorActual}></UserModal></li>
+                <li style={{backgroundColor: "lightblue", border: "1px solid black"}}>{valorActual.name}</li> 
+                <UserModal datosUsuario={valorActual}></UserModal>
             </ul>
         )
     })
