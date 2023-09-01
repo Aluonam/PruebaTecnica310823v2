@@ -26,7 +26,6 @@ export default function UserModal() {
       <Button onClick={handleOpen}>Detalles</Button>
       <Modal
         open={open}
-        onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -37,6 +36,8 @@ export default function UserModal() {
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography>
+          {/* creo botón para cerrar que reutiliza la función que ya había creada (línea 22) */}
+          <button onClick={handleClose}>Cerrar</button>
         </Box>
       </Modal>
     </div>
